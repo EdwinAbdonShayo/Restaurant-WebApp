@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: #08002be0;
+    color: hsl(0, 0%, 100%);
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: hsla(0, 0%, 0%, 0.25);
+    color: hsl(0, 0%, 90%);
+}
+
+.h-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10%;
+}
+
+.h-logo img {
+    width: 50px;
+    border-radius: 10px;
+}
+
+.l-name {
+    text-wrap: nowrap;
+    font-family: "Sofia", sans-serif;
+}
+
+/* .menu {
+
+} */
+
+.menu img {
+    width: 50px;
+}
+
+nav {
+    display: none;
+}
+
+main {
+    margin: 2%;
+    text-align: center;
+}
+
+main h1 {
+    text-align: center;
+    font-family: "Sofadi One";
+    font-weight: 10;
+    font-size: 250%;
+}
+
+main p {
+    text-align: center;
+    font-family: "sofadi one";
+    font-size: 150%;
+    padding-bottom: 15%;
+}
+
+.dish {
+    position: fixed;
+    padding: 2%;
+    bottom: 30px;
+    right: -20px;
+    width: 150px;
+    height: 150px;
+    transition: 2s ease-in-out;
+    /* background-image: url(../Media/dish-1.jpg); */
+    background-size: cover;
+    border-radius: 15px;
+    /* transition: 2s ease-in-out; */
+}
+
+/* main img {
+    width: 150px;
+    border-radius: 15px;
+    transition: 2s ease-in-out;
+} */
+
+button {
+    background: hsla(0, 0%, 100%, 0);
+    padding: 1%;
+    border: 1.5px solid hsl(300, 100%, 37%);
+    border-radius: 10px;
+    color: hsl(0, 0%, 100%);
+    scale: 2;
+    font-family: "sofia";
+}

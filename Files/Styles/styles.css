@@ -3,16 +3,18 @@
 }
 
 body {
+    position: relative;
     display: flex;
     margin: 0;
     padding: 0;
     height: 100vh;
-    /* background: #08002be0; */
     color: hsl(0, 0%, 100%);
     align-items: center;
     justify-content: center;
-    background-image: url('/Files/Media/dish-2.jpg');
-    /* backdrop-filter: blur(30px); */
+    background-image: url('/Files/Media/dish-5.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: background-image 2s;
 }
 
 header {
@@ -76,6 +78,7 @@ main h1 {
     font-family: "Sofadi One";
     font-weight: 10;
     font-size: 250%;
+    z-index: 20;
 }
 
 main p {
@@ -83,19 +86,7 @@ main p {
     font-family: "sofadi one";
     font-size: 150%;
     padding-bottom: 15%;
-}
-
-.dish {
-    position: fixed;
-    padding: 2%;
-    bottom: 30px;
-    right: -20px;
-    width: 150px;
-    height: 150px;
-    transition: 2s ease-in-out;
-    /* background-image: url(/Files/Media/dish-1.jpg); */
-    background-size: cover;
-    border-radius: 15px;
+    z-index: 20;
 }
 
 button {
@@ -107,4 +98,48 @@ button {
     scale: 2;
     font-family: "sofia";
     z-index: 99;
+}
+
+.dish {
+    position: fixed;
+    padding: 2%;
+    bottom: 30px;
+    right: 20px;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    border-radius: 15px;
+    overflow: hidden; /* Hide overflow for smooth effect */
+    transition: background-image 2s ease-in-out, transform 2s ease-in-out;
+    z-index: 10; /* Ensure .dish is above body */
+}
+
+.dish.animate {
+    animation: moveOut 2s forwards;
+}
+
+.dish.reset {
+    animation: slideIn 1s forwards;
+}
+
+@keyframes moveOut {
+    0% {
+        transform: scale(1) translateX(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(10) translateX(-50%) translateY(-50%); /* Moves to the center of the viewport */
+        opacity: 0;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(200px); /* Start from the right side */
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) translateX(0); /* End at the original position */
+        opacity: 1;
+    }
 }

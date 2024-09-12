@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", function(){
     // Rotating Images
 
     const images = [
-        '../Media/dish-1.jpg',
-        '../Media/dish-2.jpg',
-        '../Media/dish-3.jpg',
-        '../Media/dish-4.jpg',
-        '../Media/dish-5.jpg',
+        '/Files/Media/dish-1.jpg',
+        '/Files/Media/dish-2.jpg',
+        '/Files/Media/dish-3.jpg',
+        '/Files/Media/dish-4.jpg',
+        '/Files/Media/dish-5.jpg',
     ];
 
     let index = 0;
@@ -38,6 +38,9 @@ document.addEventListener("DOMContentLoaded", function(){
         section.style.backgroundImage = `url('${images[index]}')`;
         index = (index + 1) % images.length;
     }
+    
+    rotateImages();
+
     setInterval(rotateImages, 3000);
 
 })
